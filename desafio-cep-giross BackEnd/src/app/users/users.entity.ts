@@ -1,5 +1,8 @@
 /* eslint-disable prettier/prettier */
-import{Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, DeleteDateColumn} from 'typeorm'
+import{Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, DeleteDateColumn, BeforeInsert, Entity} from 'typeorm'
+import {hashSync} from 'bcrypt';
+
+@Entity({name: 'users'})
 export class UsersEntity {
   @PrimaryGeneratedColumn('uuid')
   id: string;
@@ -17,4 +20,8 @@ export class UsersEntity {
   updatedAt: string;
   @DeleteDateColumn({name: 'deleted_at'})
   deletedAt: string;
+  @BeforeInsert()  
+  hashPassword(){
+    this.password = hashSync(this.password, 10);
+  }
 }
