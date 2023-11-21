@@ -4,7 +4,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import { Repository, FindOneOptions } from 'typeorm';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { CreateUserDto } from './dto/create-user.dto';
-import { workerData } from 'worker_threads';
+
 @Injectable()
 export class UsersService {
   constructor(
@@ -17,9 +17,9 @@ export class UsersService {
       select: ['id', 'firstName', 'lastName', 'email'],
     });
   }
-  async findOneOrFail(options: FindOneOptions<UsersEntity>) {
+  async findOneBy(id: string) {
     try {
-      return await this.usersRepository.findOneOrFail(options);
+      return await this.usersRepository.findOneBy({ id });
     } catch (error) {
       throw new NotFoundException(error.message);
     }
