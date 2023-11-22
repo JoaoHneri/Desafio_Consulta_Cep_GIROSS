@@ -17,6 +17,7 @@ export class UsersService {
       select: ['id', 'firstName', 'lastName', 'email'],
     });
   }
+  
   async findOneBy(id: string) {
     try {
       return await this.usersRepository.findOneBy({ id });
