@@ -18,3 +18,11 @@ model User {
 
   name String
 }
+
+
+model Cep {
+  id        Int      @id @default(autoincrement())
+  code      String   @unique
+  latitude  Float
+  longitude Float
+}

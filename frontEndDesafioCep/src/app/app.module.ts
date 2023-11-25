@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import {HttpClientModule} from "@angular/common/http";
 import { NavbarComponent } from './navbar/navbar.component';
 import { ModalComponent } from './modal/modal.component';
+import { TableComponent } from './table/table.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ModalComponent } from './modal/modal.component';
     LoginComponent,
     HomeComponent,
     NavbarComponent,
-    ModalComponent
+    ModalComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
