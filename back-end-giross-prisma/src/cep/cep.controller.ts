@@ -6,10 +6,12 @@ import {
   Patch,
   Param,
   Delete,
+  Query,
 } from '@nestjs/common';
 import { CepService } from './cep.service';
 import { CreateCepDto } from './dto/create-cep.dto';
 import { UpdateCepDto } from './dto/update-cep.dto';
+import { Cep } from './entities/cep.entity';
 
 @Controller('cep')
 export class CepController {
@@ -18,6 +20,14 @@ export class CepController {
   @Post()
   create(@Body() createCepDto: CreateCepDto) {
     return this.cepService.create(createCepDto);
+  }
+
+  @Get('proximity')
+  async findNearbyCeps(
+    @Query('cep') cep: string,
+    @Query('km') km: number,
+  ): Promise<Cep[]> {
+    return this.cepService.findNearbyCeps(cep, km);
   }
 
   @Get()
