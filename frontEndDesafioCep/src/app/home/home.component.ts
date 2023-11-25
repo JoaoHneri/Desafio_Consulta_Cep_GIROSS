@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ModalService } from 'src/services/modal.service';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class HomeComponent {
 
-  constructor() { }
+  constructor(public modalService: ModalService) { }
 
 
 

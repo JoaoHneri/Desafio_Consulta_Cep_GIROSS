@@ -1,6 +1,25 @@
-<div *ngIf="isModalOpen" class="modal-overlay" (click)="closeModal()">
+<div class="modal-overlay" (click)="modalService.closeModal()">
     <div class="modal-container" (click)="$event.stopPropagation()">
-      <span class="close-button" (click)="closeModal()">&times;</span>
-      <p>olá</p>
+      <span class="close-button" (click)="modalService.closeModal()">&times;</span>
+      <div class="resultado">
+        <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>John Doe</td>
+                <td>john.com</td>
+              </tr>
+              <tr>
+                <td>Jane Doe</td>
+                <td>jane.com</td>
+              </tr>
+            </tbody>
+          </table>
+    </div>
     </div>
   </div>

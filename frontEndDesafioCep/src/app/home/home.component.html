@@ -10,32 +10,12 @@
                 <p>Informe os Km's:</p>
             </label>
             <input id="campo_km" class="campokm" type="number" name="input-km" title="Input km" placeholder="Digite o km" required [(ngModel)]="km">
-            <button class="button" (click)="openModal()">
-                <app-modal *ngIf="isModalOpen" ></app-modal>
+            <button class="button" (click)="modalService.openModal()">
+                
                 <img src="../../assets/icons/magnifying-glass (1).png" alt="">
                 <span class="lable">Pesquisar</span>
               </button>
+              <app-modal *ngIf="modalService.isModalOpen$ | async" (close)="modalService.closeModal()"></app-modal>
         </form>
-    </div>
-
-    <div class="resultado">
-        <table>
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Email</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>John Doe</td>
-                <td>john.com</td>
-              </tr>
-              <tr>
-                <td>Jane Doe</td>
-                <td>jane.com</td>
-              </tr>
-            </tbody>
-          </table>
     </div>
 </div>
