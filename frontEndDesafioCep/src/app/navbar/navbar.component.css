@@ -14,6 +14,10 @@
     font-family: 'Montserrat', sans-serif;
     color: #fff;
 }
+.LogoStart a img{
+    width: 8%;
+    height: 8%;
+}
 .nav-items ul{
     display: flex;
     list-style: none;
@@ -29,5 +33,17 @@
     font-family: 'Gantari', sans-serif;
     font-family: 'Montserrat', sans-serif;
     color: #fff;
+    cursor: pointer;
 
+}
+
+#sair {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+#sair img{   
+    width: 10px;
+    height: 10px;
 }

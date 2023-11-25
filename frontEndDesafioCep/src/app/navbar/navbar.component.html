@@ -1,12 +1,12 @@
 <div class="navbar">
     <div class="nav-items">
         <div class="LogoStart">
-            <a routerLink="/home">Home</a>
+            <a [routerLink]="user ? '/home' : '/'"><img src="../../assets/icons/location.png" alt="CepByMiles"></a>
         </div>
         <ul>
-        <li><a >Home</a></li>
+        <li [routerLink]="user ? '/home' : '/'"><a >Home</a></li>
         <li><a >Histórico</a></li>
-        <li><a >Sair</a></li>
+        <li *ngIf="user" (click)="Logout()" id="sair"><a>Sair <img src="../../assets/icons/logout.png" alt="Sair"></a></li>
     </ul>
     </div>
 </div>

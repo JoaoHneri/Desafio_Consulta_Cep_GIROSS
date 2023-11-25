@@ -16,7 +16,8 @@ export class LoginService {
       .post<any>(`${this.apiUrl}/login`, bodyReq)
       .pipe(
         tap((res) => {
-          console.log('Logado com sucesso:', res);
+          console.log('Logado com sucesso:', res)
+          localStorage.setItem('user', JSON.stringify(res));
         })
       );
   }

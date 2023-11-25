@@ -1,4 +1,18 @@
 <div class="home">
-    <p>Home works
-    </p>
+    <div class="form-cep">
+        <form >
+            <label for="cep">
+                <p>Informe o Cep:</p>
+            </label>
+            <input id="campo_cep" class="campoCep" type="number" name="input-cep" title="Input cep" placeholder="Digite o cep" required [(ngModel)]="cep">
+
+            <label for="km">
+                <p>Informe os Km's:</p>
+            </label>
+            <input id="campo_km" class="campokm" type="number" name="input-km" title="Input km" placeholder="Digite o km" required [(ngModel)]="km">
+            <button>
+                <span>Back</span>
+              </button>
+        </form><p (click)="consoleL()">{{cep}}</p>
+    </div>
 </div>
