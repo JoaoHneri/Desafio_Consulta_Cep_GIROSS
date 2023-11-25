@@ -15,9 +15,15 @@ export class HomeComponent {
   cep: string = '';
   @Input()
   km: string = '';
-  
-  consoleL(){
-    console.log(this.cep)
+
+  isModalOpen = false;
+
+  openModal() {
+    this.isModalOpen = true;
+  }
+
+  closeModal(){
+    this.isModalOpen = false;
   }
 
 }
