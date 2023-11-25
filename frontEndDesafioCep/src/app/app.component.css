@@ -1,0 +1,8 @@
+html, body{
+    margin: 0;
+    padding: 0;
+}
+
+* {
+    box-sizing: border-box; /* Evitar problemas de layout devido à largura e altura do elemento incluindo a borda e o preenchimento */
+  }

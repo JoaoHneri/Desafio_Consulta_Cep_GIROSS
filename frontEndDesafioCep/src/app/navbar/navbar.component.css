@@ -1,0 +1,33 @@
+
+.nav-items{
+    display: flex;
+    justify-content: space-between;
+    text-decoration: none;
+    align-items: center;
+    padding: .2em 2em;
+    text-decoration: none;
+    background-color: #0550ED;
+}
+.LogoStart a{
+    text-decoration: none;
+    font-family: 'Gantari', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+}
+.nav-items ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    padding: .5em 2em;
+    text-decoration: none;
+}
+
+.nav-items ul li a{
+    text-decoration: none;
+    padding: .4em .6em;
+    text-decoration: none;
+    font-family: 'Gantari', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+
+}
