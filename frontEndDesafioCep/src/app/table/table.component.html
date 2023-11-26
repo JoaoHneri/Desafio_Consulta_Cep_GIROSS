@@ -2,20 +2,15 @@
     <thead>
       <tr>
         <th>CEP</th>
-        <th>Rua</th>
-        <th>EX</th>
-        <th>EX</th>
+        <th>Latitude</th>
+        <th>Longitude</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let item of dadosDaRequisicao">
         <td >{{item.code}}</td>
-      </tr>
-      <tr>
-        <td>Jane Doe</td>
-        <td>jane.com</td>
-        <td>Jane Doe</td>
-        <td>jane.com</td>
+        <td>{{item.latitude}}</td>
+        <td>{{item.longitude}}</td>
       </tr>
     </tbody>
   </table>

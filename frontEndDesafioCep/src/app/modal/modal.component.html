@@ -2,7 +2,8 @@
     <div class="modal-container" (click)="$event.stopPropagation()">
       <span class="close-button" (click)="modalService.closeModal()">&times;</span>
       <div class="resultado">
-        <app-table [dadosDaRequisicao]="dadosDaRequisicao"></app-table>
+        <p>Ceps próximos:</p>
+        <app-table [dadosDaRequisicao]="dadosDaRequisicao" [user]="user"></app-table>
     </div>
     </div>
   </div>

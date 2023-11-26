@@ -9,6 +9,8 @@ import { ModalService } from 'src/services/modal.service';
 export class ModalComponent implements OnInit {
   @Input() dadosDaRequisicao: any;
   isModalOpen = true;
+  user = localStorage.getItem('user');
+  
   constructor(public modalService: ModalService) { }
   closeModal() {
     this.isModalOpen = false
