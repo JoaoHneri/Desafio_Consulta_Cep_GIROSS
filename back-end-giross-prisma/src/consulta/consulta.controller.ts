@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { ConsultaService } from './consulta.service';
 import { CreateConsultaDto } from './dto/create-consulta.dto';
 import { UpdateConsultaDto } from './dto/update-consulta.dto';
@@ -12,9 +20,9 @@ export class ConsultaController {
     return this.consultaService.create(createConsultaDto);
   }
 
-  @Get()
-  findAll() {
-    return this.consultaService.findAll();
+  @Get(':userId')
+  findUserHist(@Param('userId') userId: number) {
+    return this.consultaService.findUserHist(userId);
   }
 
   @Get(':id')
@@ -22,13 +30,13 @@ export class ConsultaController {
     return this.consultaService.findOne(+id);
   }
 
-  @Patch(':id')
-  update(@Param('id') id: string, @Body() updateConsultaDto: UpdateConsultaDto) {
-    return this.consultaService.update(+id, updateConsultaDto);
-  }
+  // @Patch(':id')
+  // update(@Param('id') id: string, @Body() updateConsultaDto: UpdateConsultaDto) {
+  //   return this.consultaService.update(+id, updateConsultaDto);
+  // }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.consultaService.remove(+id);
-  }
+  // @Delete(':id')
+  // remove(@Param('id') id: string) {
+  //   return this.consultaService.remove(+id);
+  // }
 }

@@ -22,8 +22,11 @@ export class ConsultaService {
     return createdCep;
   }
 
-  findAll() {
-    return `This action returns all consulta`;
+  async findUserHist(userId: number) {
+    return this.prisma.consulta.findMany({
+      where: { userId },
+      orderBy: { dataHora: 'desc' },
+    });
   }
 
   findOne(id: number) {
