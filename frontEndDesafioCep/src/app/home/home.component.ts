@@ -22,6 +22,7 @@ export class HomeComponent {
   
   isModalOpen = false;
   dadosDaRequisicao: any;
+  
   openModal() {
     this.isModalOpen = true;
   }

@@ -9,6 +9,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { NavbarComponent } from './navbar/navbar.component';
 import { ModalComponent } from './modal/modal.component';
 import { TableComponent } from './table/table.component';
+import { OffCanvasComponent } from './off-canvas/off-canvas.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { TableComponent } from './table/table.component';
     HomeComponent,
     NavbarComponent,
     ModalComponent,
-    TableComponent
+    TableComponent,
+    OffCanvasComponent
   ],
   imports: [
     BrowserModule,
