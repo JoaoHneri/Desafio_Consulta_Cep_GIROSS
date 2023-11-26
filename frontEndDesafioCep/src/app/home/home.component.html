@@ -10,7 +10,7 @@
                 <p>Informe os Km's:</p>
             </label>
             <input id="campo_km" class="campokm" type="number" name="input-km" title="Input km" placeholder="Digite o km" required [(ngModel)]="km">
-            <button class="button" (click)="modalService.openModal()">
+            <button class="button" (click)="onSearch(cep, km)">
                 
                 <img src="../../assets/icons/magnifying-glass (1).png" alt="">
                 <span class="lable">Pesquisar</span>
