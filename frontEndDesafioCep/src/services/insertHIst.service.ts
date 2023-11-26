@@ -6,19 +6,17 @@ import { tap } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root',
 })
-export class LoginService {
+export class insertHistService {
     apiUrl = "http://localhost:3000"
     constructor(private http: HttpClient) {}
 
-  login(email: string, password: string): Observable<any> {
-    const bodyReq = { email: email, password: password };
+  addHist(cep: string, raio: number, userId: number) {
+    const bodyReq = {cep: cep, raio: raio, userId: userId};
     return this.http
-      .post<any>(`${this.apiUrl}/login`, bodyReq)
+      .post<any>(`${this.apiUrl}/consulta`, bodyReq)
       .pipe(
         tap((res) => {
-          console.log('Logado com sucesso:', res)
-          localStorage.setItem('user', JSON.stringify(res));
-          localStorage.setItem('id', res.id);
+          console.log('Histórico inserido com sucesso', res)
         })
       );
   }
