@@ -7,7 +7,8 @@ import { insertHistService } from 'src/services/insertHIst.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
+  
 })
 export class HomeComponent {
 

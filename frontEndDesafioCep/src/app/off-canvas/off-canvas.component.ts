@@ -1,15 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-off-canvas',
   templateUrl: './off-canvas.component.html',
-  styleUrls: ['./off-canvas.component.css']
+  styleUrls: ['./off-canvas.component.css'],
 })
-export class OffCanvasComponent implements OnInit {
+export class OffCanvasComponent {
 
-  constructor() { }
+  @Input() isClicked = false;
+  @Output() isClickedChange = new EventEmitter<boolean>();
 
-  ngOnInit(): void {
+  toggleOffCanvas() {
+    this.isClicked = !this.isClicked;
+    this.isClickedChange.emit(this.isClicked);
   }
 
+  closeOffCanvas() {
+    this.isClicked = false;
+    this.isClickedChange.emit(this.isClicked);
+  }
 }

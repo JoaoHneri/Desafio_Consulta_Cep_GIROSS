@@ -4,9 +4,10 @@
             <a [routerLink]="user ? '/home' : '/'"><img src="../../assets/icons/location.png" alt="CepByMiles"></a>
         </div>
         <ul>
-        <li [routerLink]="user ? '/home' : '/'"><a >Home</a></li>
-        <li><a >Histórico</a></li>
-        <li *ngIf="user" (click)="Logout()" id="sair"><a>Sair <img src="../../assets/icons/logout.png" alt="Sair"></a></li>
-    </ul>
+            <li [routerLink]="user ? '/home' : '/'"><a >Home</a></li>
+            <li (click)="clickHistory()"><a >Histórico</a></li>
+            <li *ngIf="user" (click)="Logout()" id="sair"><a>Sair <img src="../../assets/icons/logout.png" alt="Sair"></a></li>
+        </ul>
     </div>
+    <app-off-canvas [(isClicked)]="click"></app-off-canvas>
 </div>

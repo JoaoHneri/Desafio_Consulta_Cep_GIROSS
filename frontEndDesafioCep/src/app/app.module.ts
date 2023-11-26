@@ -10,6 +10,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ModalComponent } from './modal/modal.component';
 import { TableComponent } from './table/table.component';
 import { OffCanvasComponent } from './off-canvas/off-canvas.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CardHistoricoComponent } from './card-historico/card-historico.component';
 
 @NgModule({
   declarations: [
@@ -19,13 +21,14 @@ import { OffCanvasComponent } from './off-canvas/off-canvas.component';
     NavbarComponent,
     ModalComponent,
     TableComponent,
-    OffCanvasComponent
+    OffCanvasComponent,
+    CardHistoricoComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule, AppRoutingModule, HttpClientModule
+    FormsModule, AppRoutingModule, HttpClientModule, NgbModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
