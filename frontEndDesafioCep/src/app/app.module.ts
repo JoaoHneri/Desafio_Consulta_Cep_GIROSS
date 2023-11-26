@@ -10,8 +10,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ModalComponent } from './modal/modal.component';
 import { TableComponent } from './table/table.component';
 import { OffCanvasComponent } from './off-canvas/off-canvas.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CardHistoricoComponent } from './card-historico/card-historico.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +22,12 @@ import { CardHistoricoComponent } from './card-historico/card-historico.componen
     ModalComponent,
     TableComponent,
     OffCanvasComponent,
-    CardHistoricoComponent
+    CardHistoricoComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule, AppRoutingModule, HttpClientModule, NgbModule,
+    FormsModule, AppRoutingModule, HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

@@ -1,1 +1,12 @@
-<p>card-historico works!</p>
+<div class="card" *ngFor="let item of dadosDaRequisicao">
+    <div class="card1" href="#">
+      <span>Cep:</span>
+     <p>{{item.cep}}</p>
+     <span>Raio:</span>
+     <p class="small">{{item.raio}}</p>
+     <span>Data e Hora:</span>
+     <p class="small">{{item.dataHora}}</p>
+     <div class="go-corner" href="#">
+     </div>
+   </div>
+ </div>

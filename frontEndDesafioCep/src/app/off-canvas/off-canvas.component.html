@@ -1,22 +1,11 @@
-<button class="toggle-button" (click)="toggleOffCanvas()">Toggle OffCanvas</button>
+
 
 <div class="off-canvas" [class.open]="isClicked">
   <button class="close-button" (click)="closeOffCanvas()">&times;</button>
   <ng-container *ngIf="isClicked">
     <div class="off-canvas-content">
         <div class="data-container">
-            <div class="data-item">
-              <label>CEP:</label>
-              <p>a</p>
-            </div>
-            <div class="data-item">
-              <label>Raio:</label>
-              <p>b</p>
-            </div>
-            <div class="data-item">
-              <label>Data e Hora:</label>
-              <p>c</p>
-            </div>
+            <app-card-historico></app-card-historico>
           </div>
     </div>
   </ng-container>

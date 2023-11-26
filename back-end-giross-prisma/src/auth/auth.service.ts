@@ -31,6 +31,7 @@ export class AuthService {
       sub: user.id,
       email: user.email,
       name: user.name,
+      id: user.id,
     };
 
     const jwtToken = this.JwtService.sign(playload);
@@ -39,6 +40,7 @@ export class AuthService {
       access_token: jwtToken,
       name: user.name,
       email: user.email,
+      id: user.id,
     };
   }
 }
