@@ -2,7 +2,7 @@
     <div class="modal-container" (click)="$event.stopPropagation()">
       <span class="close-button" (click)="modalService.closeModal()">&times;</span>
       <div class="resultado">
-        <app-table></app-table>
+        <app-table [dadosDaRequisicao]="dadosDaRequisicao"></app-table>
     </div>
     </div>
   </div>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ModalService } from 'src/services/modal.service';
 
 @Component({
@@ -7,7 +7,7 @@ import { ModalService } from 'src/services/modal.service';
   styleUrls: ['./modal.component.css']
 })
 export class ModalComponent implements OnInit {
-
+  @Input() dadosDaRequisicao: any;
   isModalOpen = true;
   constructor(public modalService: ModalService) { }
   closeModal() {

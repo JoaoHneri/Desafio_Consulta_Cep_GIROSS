@@ -18,9 +18,9 @@ export class HomeComponent {
   cep: string = '';
   @Input()
   km: string = '';
-
+  
   isModalOpen = false;
-
+  dadosDaRequisicao: any;
   openModal() {
     this.isModalOpen = true;
   }
@@ -29,11 +29,12 @@ export class HomeComponent {
     this.isModalOpen = false;
   }
 
-  onSearch(cep: string, km: string):void{
+  onSearch(cep: string, km: string): any{
     if(this.cep && this.km){
-    const ceps = this.getLoc.getCeps(this.cep, this.km).subscribe(
-      () => {
-        console.log("Deu bom")
+    return this.getLoc.getCeps(this.cep, this.km).subscribe(
+      (dados) => {
+        this.dadosDaRequisicao = dados
+        this.modalService.openModal();
       },
       (error) => {
         console.error('Erro', error);

@@ -8,11 +8,8 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>John Doe</td>
-        <td>john.com</td>
-        <td>John Doe</td>
-        <td>john.com</td>
+      <tr *ngFor="let item of dadosDaRequisicao">
+        <td >{{item.code}}</td>
       </tr>
       <tr>
         <td>Jane Doe</td>

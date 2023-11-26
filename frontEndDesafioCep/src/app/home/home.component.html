@@ -15,7 +15,9 @@
                 <img src="../../assets/icons/magnifying-glass (1).png" alt="">
                 <span class="lable">Pesquisar</span>
               </button>
-              <app-modal *ngIf="modalService.isModalOpen$ | async" (close)="modalService.closeModal()"></app-modal>
+              <app-modal *ngIf="modalService.isModalOpen$ | async" 
+                 (close)="modalService.closeModal()" 
+                 [dadosDaRequisicao]="dadosDaRequisicao"></app-modal>
         </form>
     </div>
 </div>
