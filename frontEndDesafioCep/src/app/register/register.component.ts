@@ -1,6 +1,7 @@
 import { Router } from '@angular/router';
 import { LoginService } from 'src/services/login.service';
 import { Component, Input } from '@angular/core';
+import { RegisterService } from 'src/services/register.service';
 
 @Component({
   selector: 'app-register',
@@ -9,7 +10,7 @@ import { Component, Input } from '@angular/core';
 })
 export class RegisterComponent {
 
-  constructor(private LoginService: LoginService, private router: Router) {}
+  constructor(private RegisterService: RegisterService, private router: Router, private loginService: LoginService) {}
   @Input()
   username: string = '';
   @Input()
@@ -20,9 +21,16 @@ export class RegisterComponent {
 
   onSubmit(): void {
     if (this.username && this.password) {
-      this.LoginService.login(this.username, this.password).subscribe(
+      this.RegisterService.Register(this.username, this.password, this.name).subscribe(
         () => {
-          this.router.navigate(['/home']);
+          this.loginService.login(this.username, this.password).subscribe(
+            () => {
+              this.router.navigate(['/home']);
+            },
+            (error) => {
+              console.error('Erro ao efetuar login:', error);
+            }
+          );
         },
         (error) => {
           console.error('Erro ao efetuar login:', error);

@@ -8,9 +8,18 @@ import { getHistService } from 'src/services/getHist.service';
 })
 export class CardHistoricoComponent implements OnInit {
   constructor(private getHistService: getHistService) {}
-  userId = localStorage.getItem('userId');
+  userId = localStorage.getItem('id');
   dadosDaRequisicao: any;
 
+  formatDateTime(data: string) {
+
+      const parts = data.split('T');
+      const datePart = parts[0].split('-').reverse().join('-');
+      const timePart = parts[1].substring(0, 5);
+      data = `${datePart}  às ${timePart}`;
+      return data
+  
+  }
   getHist(): any {
     try {
       if (this.userId) {

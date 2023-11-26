@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
 .insereform{
     display: flex;
     justify-content: center;
@@ -8,7 +9,7 @@
 
 
 .container {
-    height: 33em;
+    height: 37em;
     display: flex;
     border-radius: 9px;
   }
@@ -22,6 +23,14 @@
     padding: 20px;
     border-radius: 9px 0 0 9px;
     background-color: #fff;
+  }
+
+  .login-form p a{
+    tab-size: 10px;
+    font-family: 'Quicksand', sans-serif;
+    text-decoration: none;
+    color: #0550ED;
+    
   }
   
   .header {
@@ -172,7 +181,7 @@
     .container {
       display: flex;
       flex-wrap: wrap;
-      width: 270px;
+      width: 300px;
       transition: width 0.5s ease; /* Adicione suavização à transição da largura */
     }
   
