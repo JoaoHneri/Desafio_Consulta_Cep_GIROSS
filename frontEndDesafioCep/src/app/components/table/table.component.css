@@ -13,18 +13,22 @@ h1 {
 }
 th{
   color: #0C134F; 
+
 }
 .rwd-table {
-  background: #D8D9DA;
+  justify-content: center;
+  background: #FFF;
   color: #000000;
   border-radius: .4em;
   overflow: hidden;
+  text-align: center;
   tr {
     border-color: lighten(#34495E, 10%);
   }
   th, td {
     color: #dd5;
     margin: .5em 1em;
+    width: 30px;
 
     @media (min-width: $breakpoint-alpha) { 
       padding: 1em !important; 

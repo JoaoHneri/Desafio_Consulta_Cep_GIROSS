@@ -13,6 +13,8 @@
           placeholder="Digite o cep"
           required
           [(ngModel)]="cep"
+          maxlength="9"
+          value="{{formatarCEP(cep)}}"
         />
 
         <label for="km">

@@ -4,6 +4,7 @@ import { UpdateCepDto } from './dto/update-cep.dto';
 import { PrismaService } from 'src/prisma/prisma.service';
 import * as geolib from 'geolib';
 import { Cep } from './entities/cep.entity';
+import { send } from 'process';
 
 @Injectable()
 export class CepService {
@@ -21,15 +22,21 @@ export class CepService {
     return createdCep;
   }
 
-  async findNearbyCeps(cep: string, km: number): Promise<Cep[]> {
+  async findNearbyCeps(
+    cep: string,
+    km: number,
+  ): Promise<Cep[]> {
     const sourceCep = await this.prisma.cep.findUnique({
       where: { code: cep },
     });
 
     if (!sourceCep) {
-      throw new Error('Source CEP not found');
-      // Alternatively, you can return an empty array or another response
-      // return [];
+      const errorMessage = 'Cep não Encontrado';
+      console.log(errorMessage);
+      // Alternatively, you can throw an exception or return an empty array
+      // throw new Error(errorMessage);
+       return [];
+      //return { error: errorMessage };
     }
 
     const allCeps = await this.prisma.cep.findMany();

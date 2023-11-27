@@ -22,7 +22,7 @@
   }
 
   .modal-container {
-    background-color: #D8D9DA;
+    background-color: #FFF;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -36,4 +36,10 @@
     right: 10px;
     font-size: 20px;
     cursor: pointer;
+  }
+
+  .resultado{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
   }

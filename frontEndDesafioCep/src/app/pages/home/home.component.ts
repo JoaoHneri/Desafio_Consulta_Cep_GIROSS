@@ -32,6 +32,16 @@ export class HomeComponent {
     this.isModalOpen = false;
   }
 
+  formatarCEP(cep: string): string {
+    // Remover caracteres não numéricos
+    cep = cep.replace(/\D/g, '');
+
+    // Inserir a máscara padrão
+    return `${cep.slice(0, 5)}-${cep.slice(5)}`;
+  }
+
+  
+
 
   userId = localStorage.getItem('id');
   intValueofUserID = 0;

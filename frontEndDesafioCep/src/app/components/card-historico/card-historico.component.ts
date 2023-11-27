@@ -11,15 +11,29 @@ export class CardHistoricoComponent implements OnInit {
   userId = localStorage.getItem('id');
   dadosDaRequisicao: any;
 
-  formatDateTime(data: string) {
 
-      const parts = data.split('T');
-      const datePart = parts[0].split('-').reverse().join('-');
-      const timePart = parts[1].substring(0, 5);
-      data = `${datePart}  às ${timePart}`;
-      return data
-  
+  formatDateTime(dateTime: string): string {
+    const date = new Date(dateTime);
+
+    // Obtém os componentes de data e hora
+    const day = date.getDate();
+    const month = date.getMonth() + 1; // Mês é baseado em zero, então adicionamos 1
+    const year = date.getFullYear();
+    const hours = date.getHours();
+    const minutes = date.getMinutes();
+    const seconds = date.getSeconds();
+
+    // Formatação com zeros à esquerda, se necessário
+    const formattedDay = day < 10 ? `0${day}` : `${day}`;
+    const formattedMonth = month < 10 ? `0${month}` : `${month}`;
+    const formattedHours = hours < 10 ? `0${hours}` : `${hours}`;
+    const formattedMinutes = minutes < 10 ? `0${minutes}` : `${minutes}`;
+    const formattedSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
+
+    // Retorna a data e hora formatadas
+    return `${formattedDay}/${formattedMonth}/${year} às ${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
   }
+
   getHist(): any {
     try {
       if (this.userId) {
