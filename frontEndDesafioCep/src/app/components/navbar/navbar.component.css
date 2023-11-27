@@ -1,6 +1,6 @@
-  @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
-  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@700&display=swap");
 
 .navs {
   display: flex;
@@ -9,22 +9,19 @@
 
 nav {
   width: 300px;
-  background: #D8D9DA;
+  background: #d8d9da;
   color: rgba(0, 0, 0, 0.87);
   -webkit-clip-path: circle(24px at 30px 24px);
   clip-path: circle(24px at 32px 24px);
   -webkit-transition: -webkit-clip-path 0.5625s, clip-path 0.375s;
   transition: -webkit-clip-path 0.5625s, clip-path 0.375s;
   position: fixed;
-  
-  
 }
 
-.navs p{
-    font-family: 'Quicksand', sans-serif;
-    font-size: 30px;
-    font-weight: bold;
-    color: #000000;
+.navs p {
+  font-family: "Quicksand", sans-serif;
+  font-size: 25px;
+  color: #000000;
 }
 
 nav:hover {
@@ -46,11 +43,16 @@ nav a {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  font-family: 'DM Serif Display', serif;
+  font-family: "DM Serif Display", serif;
+  font-family: "Poppins", sans-serif;
 }
 
-.navs p{
-  font-family: 'DM Serif Display', serif;
+.navs p {
+  font-family: "DM Serif Display", serif;
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: 40px;
+  color: #0c134f;
 }
 
 nav a:hover {
@@ -94,8 +96,6 @@ nav a:active {
   top: 7px;
 }
 
-
-
 .Btn {
   --black: #000000;
   --ch-black: #141414;
@@ -114,14 +114,14 @@ nav a:active {
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  transition-duration: .3s;
-  background-color: #0C134F;
+  transition-duration: 0.3s;
+  background-color: #0c134f;
 }
 
 /* plus sign */
 .sign {
   width: 100%;
-  transition-duration: .3s;
+  transition-duration: 0.3s;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -143,5 +143,23 @@ nav a:active {
   color: var(--night-rider);
   font-size: 1.2em;
   font-weight: 600;
-  transition-duration: .3s;
+  transition-duration: 0.3s;
+}
+
+@media screen and (max-width: 1030px) {
+  .Btn {
+    background-color: #d8d9da;
+  }
+
+  .navs {
+    justify-content: space-between; /* Adicione esta linha para manter o espaço entre os itens */
+    align-items: center;
+    flex-direction: row; /* Mantenha a direção do flex como linha */
+  }
+
+  .navs p {
+    margin: 0; /* Remova a margem superior padrão do parágrafo */
+    font-size: 20px; /* Ajuste o tamanho da fonte para telas menores */
+    justify-content: center;
+  }
 }
