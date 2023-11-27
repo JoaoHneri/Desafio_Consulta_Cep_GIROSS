@@ -12,6 +12,7 @@ import { TableComponent } from './table/table.component';
 import { OffCanvasComponent } from './off-canvas/off-canvas.component';
 import { CardHistoricoComponent } from './card-historico/card-historico.component';
 import { RegisterComponent } from './register/register.component';
+import { AlertErrorComponent } from './alert-error/alert-error.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { RegisterComponent } from './register/register.component';
     TableComponent,
     OffCanvasComponent,
     CardHistoricoComponent,
-    RegisterComponent
+    RegisterComponent,
+    AlertErrorComponent
   ],
   imports: [
     BrowserModule,

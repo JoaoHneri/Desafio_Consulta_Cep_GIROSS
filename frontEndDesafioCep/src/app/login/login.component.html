@@ -24,11 +24,15 @@
         <span>Entrar</span>
       </button>
       <p>Não possui conta? <a [routerLink]="'/register'">Registre-se!</a></p>
+      <app-alert-error *ngIf="msgError" [errormsm]="msgError"></app-alert-error>
       </div>
+      
       <div class="testimonial">
         <div class="image-Aside">
           <img src="../../assets/Inserir_um_título-removebg-preview.png" alt="Cadastre-se"></div>
+          
       </div>
+      
     </div>
   </form>
   

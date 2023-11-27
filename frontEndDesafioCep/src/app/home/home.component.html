@@ -28,6 +28,7 @@
           required
           [(ngModel)]="km"
         />
+        
         <app-modal
           *ngIf="modalService.isModalOpen$ | async"
           (close)="modalService.closeModal()"
@@ -35,5 +36,10 @@
         ></app-modal>
       <br />
       <div class="submit-btn" (click)="onSearch(cep, km)">Pesquisar</div>
+        <div class="msgErr">
+    <app-alert-error *ngIf="messageError" [errormsm]="messageError"></app-alert-error>
   </div>
+  </div>
+
+
 </div>

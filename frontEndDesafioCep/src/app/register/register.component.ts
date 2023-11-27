@@ -18,6 +18,7 @@ export class RegisterComponent {
   @Input()
   name: string = '';
 
+  msgError: string = '';
 
   onSubmit(): void {
     if (this.username && this.password) {
@@ -28,6 +29,9 @@ export class RegisterComponent {
               this.router.navigate(['/home']);
             },
             (error) => {
+
+              
+              this.msgError = error.message[0];
               console.error('Erro ao efetuar login:', error);
             }
           );
@@ -37,7 +41,7 @@ export class RegisterComponent {
         }
       );
     } else {
-      console.error('Por favor, forneça e-mail e senha.');
+      this.msgError ='Por favor, forneça e-mail e senha.';
     }
   }
 

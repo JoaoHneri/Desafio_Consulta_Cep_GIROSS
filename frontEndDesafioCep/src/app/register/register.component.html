@@ -31,6 +31,7 @@
           <span>Registrar</span>
         </button>
         <p>Já tem conta? <a [routerLink]="'/'">Logue!</a></p>
+        <app-alert-error *ngIf="msgError" [errormsm]="msgError"></app-alert-error>
         </div>
 
         <div class="testimonial">

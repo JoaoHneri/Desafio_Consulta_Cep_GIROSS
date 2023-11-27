@@ -35,7 +35,7 @@ export class HomeComponent {
 
   userId = localStorage.getItem('id');
   intValueofUserID = 0;
-  
+  messageError = "";
 
 
   addHist(cep: string, km: number): any{
@@ -56,9 +56,14 @@ export class HomeComponent {
     if(this.cep && this.km){
     return this.getLoc.getCeps(this.cep, this.km).subscribe(
       (dados) => {
+        if(dados.length === 0){
+          this.messageError = "Cep não existe"
+          return
+        }
         this.dadosDaRequisicao = dados
         this.modalService.openModal();
         const intValue = parseInt(this.km, 10)
+
         this.addHist(cep, intValue)
       },
       (error) => {
@@ -66,7 +71,7 @@ export class HomeComponent {
       }
     );
   } else {
-    console.error('Por favor, tente novamente');
+    this.messageError = "Por favor preencha os campos"
   }
 
   }

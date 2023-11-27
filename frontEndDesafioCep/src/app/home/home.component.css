@@ -1,11 +1,14 @@
-.home{
+/* Estilos normais */
+.home {
   display: flex;
   justify-content: center;
-  margin: 0;
   align-items: center;
   height: 90vh;
-  margin: 0;
-  padding: 0;
+  flex-direction: column;
+}
+
+.msgErr {
+  justify-content: start;
 }
 
 .subscribe {
@@ -17,12 +20,10 @@
   border-radius: 4px;
   color: #333;
   box-shadow: 0px 0px 60px 5px rgba(0, 0, 0, 0.4);
-  justify-content: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-
 
 .subscribe:after {
   position: absolute;
@@ -37,7 +38,6 @@
 }
 
 .subscribe p {
-
   font-size: 20px;
   font-weight: bold;
   letter-spacing: 4px;
@@ -45,14 +45,13 @@
 }
 
 .subscribe input {
-  bottom: 30px;
   border: none;
   border-bottom: 1px solid #d4d4d4;
   padding: 10px;
   width: 89%;
   background: transparent;
   transition: all .25s ease;
-  margin-bottom: 70px;
+  margin-bottom: 30px;
 }
 
 .subscribe input:focus {
@@ -84,3 +83,18 @@
   background-color: #07013d;
   box-shadow: -5px 6px 20px 0px rgba(88, 88, 88, 0.569);
 }
+
+/* Responsividade para telas menores */
+@media screen and (max-width: 768px) {
+  .subscribe {
+    width: 80%; /* Ajuste o tamanho conforme necessário */
+    margin: auto; /* Centralize na tela */
+  }
+
+  .subscribe .submit-btn {
+    right: 0;
+    bottom: 0;
+  }
+}
+
+/* Adicione mais media queries conforme necessário para diferentes tamanhos de tela */

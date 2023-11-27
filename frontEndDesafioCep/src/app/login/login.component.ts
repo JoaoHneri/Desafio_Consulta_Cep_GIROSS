@@ -14,18 +14,22 @@ export class LoginComponent {
   @Input()
   password: string = '';
 
+  msgError: string = '';
+
   onSubmit(): void {
     if (this.username && this.password) {
       this.LoginService.login(this.username, this.password).subscribe(
         () => {
+          
           this.router.navigate(['/home']);
         },
         (error) => {
+          this.msgError = error.error.message;
           console.error('Erro ao efetuar login:', error);
         }
       );
     } else {
-      console.error('Por favor, forneça e-mail e senha.');
+      this.msgError ='Por favor, forneça e-mail e senha.';
     }
   }
 }
