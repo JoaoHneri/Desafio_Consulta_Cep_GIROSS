@@ -60,6 +60,7 @@ export class HomeComponent {
           this.messageError = "Cep não existe"
           return
         }
+        this.messageError = ""
         this.dadosDaRequisicao = dados
         this.modalService.openModal();
         const intValue = parseInt(this.km, 10)
