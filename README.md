@@ -1,3 +1,81 @@
+# Consulta CEP: Cep By Miles
+
+Este é um sistema para consultar CEPs, criado por meio de um desafio, o sistema foi criado utilizando um backend em Nest.js e o frontend em Angular.
+
+## Para Começar:
+
+## Configuração do Backend
+
+1. **Navegue até a pasta `back-end-giross-prisma`:**
+
+    ```bash
+    cd back-end-giross-prisma
+    ```
+
+2. **Instale as dependências:**
+
+    ```bash
+    npm install
+    ```
+
+3. **Execute as migrações do banco de dados:**
+
+    ```bash
+    npx prisma migrate dev
+    ```
+
+4. **Inicie o servidor Nest.js:**
+
+    ```bash
+    npm run start:dev
+    ```
+
+   Acesse [http://localhost:3000](http://localhost:3000) para ter acesso a api.
+
+## Configuração do Frontend
+
+1. **Navegue até a pasta `frontEndDesafioCep`:**
+
+    ```bash
+    cd frontEndDesafioCep
+    ```
+
+2. **Instale as dependências:**
+
+    ```bash
+    npm install
+    ```
+
+3. **Inicie o servidor Angular:**
+
+    ```bash
+    ng serve
+    ```
+
+    Acesse [http://localhost:4200](http://localhost:4200) para utilizar o FrontEnd.
+
+## Inserindo CEPs no Banco de Dados
+
+1. **Na pasta `prisma`, no diretório `migrations` na pasta `insertCeps` há uma migration para ser executada e adicionar os ceps ao banco de dados, ao executá-la você adicionará alguns ceps no banco de dados para utilizar na aplicação, execute o comando:**
+
+    ```bash
+    npx prisma migrate dev
+    ```
+
+   **OU**
+
+   Ou se preferir execute a query a seguir no banco de dados Mysql:
+   
+    ```bash
+    INSERT INTO Cep (code, latitude, longitude) VALUES ('44091755', 57.775, -102.419), ('44091756', 57.780, -102.420), ('44091757', 57.785, -102.425), ('44091758', 57.790, -102.430), ('44091759', 57.795, -102.435), ('44091760', 57.800, -102.440), ('44091761', 57.805, -102.445), ('44091762', 57.810, -102.450), ('44091763', 57.815, -102.455), ('44091764', 57.820, -102.460), ('44091765', 57.825, -102.465);
+    ```
+
+---
+
+**Detalhes:** O projeto não consume de uma API de ceps, toda a lógica de capturar os ceps dentro do raio de km inseridos foi criada com o auxílio da biblioteca geolib, o qual auxíliou a fazer o retorno deste cálculo.
+##
+
+
 ### Desafio do Sistema de Consulta de CEPs ###
 
 #### Objetivo:
