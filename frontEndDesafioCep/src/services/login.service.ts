@@ -18,7 +18,8 @@ export class LoginService {
         tap((res) => {
           console.log('Logado com sucesso:', res)
           localStorage.setItem('user', JSON.stringify(res));
-          localStorage.setItem('id', res.id);
+          localStorage.setItem('id', res.id)
+          localStorage.setItem('token', res.access_token);
         })
       );
   }
