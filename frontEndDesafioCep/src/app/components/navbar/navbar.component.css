@@ -162,4 +162,13 @@ nav a:active {
     font-size: 20px; /* Ajuste o tamanho da fonte para telas menores */
     justify-content: center;
   }
+  .lss{
+    z-index: 1000;
+  }
+
+  nav {
+
+    background: #d8d9da;
+
+  }
 }

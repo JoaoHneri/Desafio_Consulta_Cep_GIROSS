@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 <div class="home">
-    <div class="subscribe">
+    <div class="subscribe" (keydown.enter)="onSearch(cep, km)">
         <label for="cep">
           <p>Informe o Cep:</p>
         </label>
